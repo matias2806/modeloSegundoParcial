@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OpcionesDeUsuariosComponent } from './auth/opciones-de-usuarios/opciones-de-usuarios.component';
+import { AltaMateriaComponent } from './components/materia/alta-materia/alta-materia.component';
+import { ListadoProfesoresComponent } from './components/Profesores/listado-profesores/listado-profesores.component';
 
 registerLocaleData(localeEsAr, 'es-Ar');
 
@@ -25,6 +27,8 @@ registerLocaleData(localeEsAr, 'es-Ar');
     AppComponent,
     NavbarComponent,
     OpcionesDeUsuariosComponent,
+    AltaMateriaComponent,
+    ListadoProfesoresComponent,
    
   ],
   imports: [

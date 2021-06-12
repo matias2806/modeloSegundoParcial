@@ -22,16 +22,10 @@ export class UsuariosService {
   private path = '/usuarios';
   usuariosColecction: AngularFirestoreCollection<Usuario>;
   public usuarios: Observable<Usuario[]>;
-  public usuarioUnico: Observable<Usuario> | undefined;
-  userPrueba: Observable<Usuario[]>;
-  // public urlImage2: Observable<string>;
-
-
 
 
   constructor(public db: AngularFirestore, private storage: AngularFireStorage, private AuthSvc: AuthService, private _Mservice: MensajesService) {
     this.usuariosColecction = db.collection(this.path);
-    this.userPrueba = this.usuariosColecction.valueChanges();
 
     this.usuarios = this.usuariosColecction.snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
@@ -70,18 +64,18 @@ export class UsuariosService {
     });
   }
 
-  obtenerEspecialistas() {
+  obtenerProfesores() {
     return this.usuarios.pipe(map(dato => {
       return dato.filter(f => {
-        return f.tipoPerfil == "Especialista";
+        return f.tipoPerfil == "Profesor";
       });
     }));
   }
 
-  obtenerPacientes() {
+  obtenerAlumnos() {
     return this.usuarios.pipe(map(dato => {
       return dato.filter(f => {
-        return f.tipoPerfil == "Paciente";
+        return f.tipoPerfil == "Alumno";
       });
     }));
   }

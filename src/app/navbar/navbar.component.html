@@ -9,8 +9,11 @@
             <li class="nav-item active">
                 <a class="nav-link" [routerLink]="['/home']">Home</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Admin'">
                 <a class="nav-link" [routerLink]="['/altaAdmin']">Alta Admin</a>
+            </li>
+            <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Admin'">
+                <a class="nav-link" [routerLink]="['/altaMateria']">Alta Materia</a>
             </li>
         </ul>
         <ul class="navbar-nav mx-auto" *ngIf="user$ |async as user; else login">

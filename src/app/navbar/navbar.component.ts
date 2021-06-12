@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/service/auth.service';
+import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +11,17 @@ import { AuthService } from '../auth/service/auth.service';
 })
 export class NavbarComponent {
   public user$: Observable<any> = this.authSvc.afAuth.user;
+  public usuario: any = null;
 
-  constructor(public authSvc: AuthService, private router: Router) { }
+  constructor(public authSvc: AuthService, private _Uservice: UsuariosService, private router: Router) { }
 
+  async ngOnInit() {
+    var user = await this.authSvc.getCurrentUser();
+    if (user?.email != null && user) {
+      var dataUser = await this._Uservice.getUsuarioPorEmail(user.email);
+      this.usuario = dataUser;
+    }
+  }
   async onLogout() {
 
     try {
