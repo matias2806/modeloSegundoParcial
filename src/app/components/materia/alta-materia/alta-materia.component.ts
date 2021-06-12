@@ -8,6 +8,8 @@ import { AuthService } from '../../../auth/service/auth.service';
 import { Materia } from 'src/app/Models/Materia';
 import { v4 as uuidv4 } from 'uuid';
 import { MateriaService } from 'src/app/services/materia/materia.service';
+import { InscripcionMService } from 'src/app/services/inscripcion/inscripcion-m.service';
+import { InscripcionMateria } from 'src/app/Models/InscripcionMateria';
 
 @Component({
   selector: 'app-alta-materia',
@@ -23,7 +25,7 @@ export class AltaMateriaComponent implements OnInit {
   public banderaProfesorElejido = true;
   public profesor: Usuario | null = null;
 
-  constructor(private fb: FormBuilder, private AuthSvc: AuthService, private router: Router, private _Uservice: UsuariosService, private _Mservice: MensajesService, private _MateService: MateriaService) { }
+  constructor(private fb: FormBuilder, private AuthSvc: AuthService, private router: Router, private _Uservice: UsuariosService, private _Mservice: MensajesService, private _MateService: MateriaService, private _Iservice: InscripcionMService) { }
 
   ngOnInit(): void {
     this._Uservice.obtenerProfesores().subscribe(data => {
@@ -33,7 +35,7 @@ export class AltaMateriaComponent implements OnInit {
     this.registerForm = this.fb.group({
       'nombre': ['', [Validators.required]],//Obli
       'cuatrimestre': ['', [Validators.required]],//Obli
-      'cupoAlumnos': ['', [Validators.required, Validators.min(10), Validators.max(600)]],//Obli
+      'cupoAlumnos': ['', [Validators.required, Validators.min(1), Validators.max(200)]],//Obli
       'anio': ['', [Validators.required, Validators.min(1000), Validators.max(9999)]],//Obli
       'profesor': ['', [Validators.required]]
     });
@@ -43,7 +45,7 @@ export class AltaMateriaComponent implements OnInit {
   cargarProfesorSeleccionado(usuario: Usuario) {
     this.banderaProfesorElejido = false;
     this.profesor = usuario;
-    this.registerForm?.controls['profesor'].setValue( this.profesor);
+    this.registerForm?.controls['profesor'].setValue(this.profesor);
   }
 
   eliminarProfesor(profesor: Usuario) {
@@ -64,6 +66,15 @@ export class AltaMateriaComponent implements OnInit {
     }
     console.log(materia);
     this._MateService.alta(materia);
+
+    let inscripcion: InscripcionMateria = {
+      id: uuidv4(),
+      nombre: materia.nombre,
+      cupoAlumnos: materia.cupoAlumnos ,
+      materia: materia,
+      listaAlumnos: [],
+    }
+    this._Iservice.alta(inscripcion);
     this._Mservice.mensajeExitoso("Materia dada de alta");
     this.router.navigate(['/home']);
   }

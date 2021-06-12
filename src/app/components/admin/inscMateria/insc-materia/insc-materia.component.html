@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-11 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-12 col-lg-12 text-center">
+                    <h2>Inscripción de materias</h2>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6 col-lg-6 text-center">
+                        <h4>Alumno elejido</h4>
+                        <input type="text" id="alumno" class="form-control" value="{{nombreAlum}}" disabled>
+                    </div>
+                    <div class="col-md-6 col-lg-6 text-center">
+                        <h4>Materia elejido</h4>
+                        <input type="text" id="alumno" class="form-control" value="{{nombreMat}}" disabled>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-12 col-lg-12 text-center d-grid gap-2">
+                        <button class="btn btn-primary" (click)="inscribir()">Inscribir al alumno en la materia</button>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6 col-lg-6 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-listado-alumnos [listadoAlumnos]='listadoAlumn'
+                                    (eventoAlumnoSeleccionado)="cargarAlumnoSeleccionado($event)"></app-listado-alumnos>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-listado-materias [listadoMaterias]='listadoMat'
+                                    (eventoMateriaSeleccionada)="cargarMateriaSeleccionada($event)">
+                                </app-listado-materias>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

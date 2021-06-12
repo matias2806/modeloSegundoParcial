@@ -15,6 +15,9 @@
             <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Admin'">
                 <a class="nav-link" [routerLink]="['/altaMateria']">Alta Materia</a>
             </li>
+            <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Admin'">
+                <a class="nav-link" [routerLink]="['/inscMateria']">Inscripción Materia</a>
+            </li>
         </ul>
         <ul class="navbar-nav mx-auto" *ngIf="user$ |async as user; else login">
             <li class="nav-item " *ngIf="user">

@@ -92,24 +92,6 @@ export class UsuariosService {
     }
   }
 
-  update2() {
-    var cuidad1 = this.db.collection("cuidades").doc("j4EhEDKNm3BgRXx41GET");
-    // console.log(cuidad1);
-
-    return cuidad1.update({
-      miCuidad: true,
-      nombre: "Paraguay",
-    })
-      .then(() => {
-        console.log("Document successfully updated!");
-      })
-      .catch((error) => {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
-      });
-  }
-
-
 
   delete(id: string): Promise<void> {
     return this.usuariosColecction.doc(id).delete();

@@ -16,7 +16,7 @@ export class ListadoAlumnosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  enviarEventoProfesorSeleccionado(profesor: Usuario){
+  enviarEventoAlumnoSeleccionado(profesor: Usuario){
     this.eventoAlumnoSeleccionado.emit(profesor);
   }
 }
