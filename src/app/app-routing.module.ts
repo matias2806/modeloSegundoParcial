@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
   { path: 'register/:tipoPerfil', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
   { path: 'tiposDeRegistros', component:  OpcionesDeUsuariosComponent },
+  { path: 'altaAdmin',  loadChildren: () => import('./components/alta-administrador/alta-administrador.module').then(m => m.AltaAdministradorModule) },
   
 ];
 

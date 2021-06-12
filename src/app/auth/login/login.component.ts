@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private AuthSvc: AuthService, private router: Router, private _Uservice: UsuariosService, private _Mservice: MensajesService) {
     this.carga5usuarios();
-    console.log(this.usuariosAccesoRapido);
+    // console.log(this.usuariosAccesoRapido);
    }
 
   ngOnInit(): void {
@@ -38,10 +38,12 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       }
       else{
+        
         this._Mservice.mensajeError("El email y la contraseña no corresponden");
       }
     } catch (error) {
       console.log("aa", error);
+      //this._Mservice.mensajeError(error);
     }
   }
   cargarMatias() {
@@ -71,28 +73,24 @@ export class LoginComponent implements OnInit {
 
     this._Uservice.getUsuarioPorEmail("facundo.palmieri.01@gmail.com").then(user => {
       if (user) {
-        console.log(user);
         this.usuariosAccesoRapido?.push(user);
       }
     });
 
     this._Uservice.getUsuarioPorEmail("lorena.bevilacqua75@gmail.com").then(user => {
       if (user) {
-        console.log(user);
         this.usuariosAccesoRapido?.push(user);
       }
     });
 
     this._Uservice.getUsuarioPorEmail("profesorb@gmail.com").then(user => {
       if (user) {
-        console.log(user);
         this.usuariosAccesoRapido?.push(user);
       }
     });
 
     this._Uservice.getUsuarioPorEmail("alumnoa@gmail.com").then(user => {
       if (user) {
-        console.log(user);
         this.usuariosAccesoRapido?.push(user);
       }
     });
