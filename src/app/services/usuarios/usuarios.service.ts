@@ -92,36 +92,6 @@ export class UsuariosService {
     }
   }
 
-
-  // updateDiasEspecialistas(id: any, user: Usuario) {
-  //   var usuario = this.db.collection(this.path).doc(id);
-  //   console.log(usuario);
-  //   return usuario.update({
-  //     diasDeAtencion: user.diasDeAtencion,
-  //   })
-  //     .then(() => {
-  //       console.log("Documento actualizado!");
-  //       this._Mservice.mensajeExitoso("Se actualizaron los horarios de atención");
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error en la actualizacion: ", error);
-  //     });
-  // }
-
-  // updateAprovadoPorAdmin(id: any, user: Usuario) {
-  //   var usuario = this.db.collection(this.path).doc(id);
-
-  //   return usuario.update({
-  //     aprovadoPorAdmin: user.aprovadoPorAdmin,
-  //   })
-  //     .then(() => {
-  //       console.log("Documento actualizado!");
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error en la actualizacion: ", error);
-  //     });
-  // }
-
   update2() {
     var cuidad1 = this.db.collection("cuidades").doc("j4EhEDKNm3BgRXx41GET");
     // console.log(cuidad1);

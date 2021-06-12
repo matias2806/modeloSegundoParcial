@@ -1,4 +1,3 @@
-import { Dia } from "./Dia";
 
 export class Usuario {
     public nombre: string = ''; //Obli

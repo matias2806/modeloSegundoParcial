@@ -19,6 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OpcionesDeUsuariosComponent } from './auth/opciones-de-usuarios/opciones-de-usuarios.component';
 import { AltaMateriaComponent } from './components/materia/alta-materia/alta-materia.component';
 import { ListadoProfesoresComponent } from './components/Profesores/listado-profesores/listado-profesores.component';
+import { ListadoAlumnosComponent } from './components/Alumnos/listado-alumnos/listado-alumnos.component';
+import { ListadoMateriasComponent } from './components/materia/listado-materias/listado-materias.component';
 
 registerLocaleData(localeEsAr, 'es-Ar');
 
@@ -29,6 +31,8 @@ registerLocaleData(localeEsAr, 'es-Ar');
     OpcionesDeUsuariosComponent,
     AltaMateriaComponent,
     ListadoProfesoresComponent,
+    ListadoAlumnosComponent,
+    ListadoMateriasComponent,
    
   ],
   imports: [
