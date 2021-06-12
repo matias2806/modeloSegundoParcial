@@ -34,10 +34,6 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  async espera(){
-
-  }
-
   async onRegister() {
     var urlFoto="";
     const { email, contraseña } = this.registerForm?.value;
@@ -58,6 +54,9 @@ export class RegisterComponent implements OnInit {
         this._Uservice.preGuardarUsuario(user, this.foto);
       });
 
+      this._Mservice.mensajeExitoso(this.tipoPerfil+" dado de alta");
+      this.router.navigate(['/home']);
+
     } catch (error) {
       console.log(error);
     }
@@ -70,7 +69,7 @@ export class RegisterComponent implements OnInit {
   CargaDatos() {
     this.registerForm?.controls['nombre'].setValue('Matias Palmieri');
     this.registerForm?.controls['email'].setValue('matias.palmieri.01@gmail.com');
-    this.registerForm?.controls['contraseña'].setValue('matias1');
+    this.registerForm?.controls['contraseña'].setValue('123456');
   }
 
   veoForm() {

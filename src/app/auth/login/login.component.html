@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Login</h1>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" formControlName="password">
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                    </div>
+                </form>
+                <div class="d-grid gap-2">
+                    <button (click)="cargarMatias()" class="btn btn-success btn-md btn-block mt-2">Ingresar como
+                        Matias</button>
+                    <div class="form-group mt-3 text-center">
+                        <p>Create an account? <a [routerLink]="['/register']">Register</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div *ngFor="let user of usuariosAccesoRapido" class="mt-2 col-md-4 text-center">
+                <button class="animate__animated animate__backInUp btn btn-info mt-1 largo"
+                    (click)="cargaUsuario(user.nombre)">
+                    <img src="{{user.URLfoto}}" class="tamanioFoto" alt="">
+                    <h6>{{user.tipoPerfil | uppercase}}: {{user.nombre}}</h6>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
