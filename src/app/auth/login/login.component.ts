@@ -64,6 +64,9 @@ export class LoginComponent implements OnInit {
       case "Lorena":
         this.loginForm.setValue({ email: 'lorena.bevilacqua75@gmail.com', password: '123456' });
         break;
+        case "admin":
+        this.loginForm.setValue({ email: 'admin@gmail.com', password: '123456' });
+        break;
       default:
         break;
     }
@@ -90,6 +93,12 @@ export class LoginComponent implements OnInit {
     });
 
     this._Uservice.getUsuarioPorEmail("alumnoa@gmail.com").then(user => {
+      if (user) {
+        this.usuariosAccesoRapido?.push(user);
+      }
+    });
+
+    this._Uservice.getUsuarioPorEmail("admin@gmail.com").then(user => {
       if (user) {
         this.usuariosAccesoRapido?.push(user);
       }
