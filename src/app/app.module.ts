@@ -22,6 +22,7 @@ import { ListadoProfesoresComponent } from './components/Profesores/listado-prof
 import { ListadoAlumnosComponent } from './components/Alumnos/listado-alumnos/listado-alumnos.component';
 import { ListadoMateriasComponent } from './components/materia/listado-materias/listado-materias.component';
 import { InscMateriaComponent } from './components/admin/inscMateria/insc-materia/insc-materia.component';
+import { VerMatYalumnosComponent } from './components/inscriptos/verMateriasyAlum/ver-mat-yalumnos/ver-mat-yalumnos.component';
 
 
 registerLocaleData(localeEsAr, 'es-Ar');
@@ -36,6 +37,7 @@ registerLocaleData(localeEsAr, 'es-Ar');
     ListadoAlumnosComponent,
     ListadoMateriasComponent,
     InscMateriaComponent,
+    VerMatYalumnosComponent,
    
   ],
   imports: [

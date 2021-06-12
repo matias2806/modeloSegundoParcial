@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-11 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-12 col-lg-12 text-center">
+                    <h2>Inscripción de materias</h2>
+                    <h6>Por favor seleccione una materia para ver a los alumnos inscriptos.</h6>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4 col-lg-4 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-listado-materias [listadoMaterias]='listadoMat'
+                                    (eventoMateriaSeleccionada)="cargarMateriaSeleccionada($event)">
+                                </app-listado-materias>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-lg-8 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-listado-alumnos [listadoAlumnos]='listadoAlumn'
+                                (eventoAlumnoSeleccionado)="cargarAlumnoSeleccionado($event)"></app-listado-alumnos>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
