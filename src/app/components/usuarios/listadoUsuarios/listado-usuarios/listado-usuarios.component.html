@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-11 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <h2>Listado de usuarios</h2>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Busqueda por tipo perfil..." name="filterPost"
+                                [(ngModel)]="filterPost">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <!-- <th>#</th> -->
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Tipo Perfil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of listadoUsers | filtroUsuarios:filterPost">
+                                    <!-- <td>{{i + 1 }}</td> -->
+                                    <td>{{user.nombre}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.tipoPerfil}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

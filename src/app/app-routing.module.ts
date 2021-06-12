@@ -5,6 +5,7 @@ import { OpcionesDeUsuariosComponent } from './auth/opciones-de-usuarios/opcione
 import { InscMateriaComponent } from './components/admin/inscMateria/insc-materia/insc-materia.component';
 import { VerMatYalumnosComponent } from './components/inscriptos/verMateriasyAlum/ver-mat-yalumnos/ver-mat-yalumnos.component';
 import { AltaMateriaComponent } from './components/materia/alta-materia/alta-materia.component';
+import { ListadoUsuariosComponent } from './components/usuarios/listadoUsuarios/listado-usuarios/listado-usuarios.component';
 import { GAuthGuard } from './guards/g-auth.guard';
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'altaMateria', component:  AltaMateriaComponent, canActivate:[GAuthGuard] },
   { path: 'inscMateria', component:  InscMateriaComponent, canActivate:[GAuthGuard] },
   { path: 'verMateriasyAlumnos', component:  VerMatYalumnosComponent, canActivate:[GAuthGuard] },
+  { path: 'listadoUsuarios', component:  ListadoUsuariosComponent, canActivate:[GAuthGuard] },
 ];
 
 @NgModule({
