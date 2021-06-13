@@ -28,6 +28,7 @@ import { FiltroUsuariosPipe } from './pipes/filtro-usuarios.pipe';
 import { InscMateriaAComponent } from './components/Alumnos/insc-materia-a/insc-materia-a.component';
 import { VerMisInscripcionesComponent } from './components/Alumnos/ver-mis-inscripciones/ver-mis-inscripciones.component';
 import { ListadoInscripcionesComponent } from './components/inscriptos/listado-inscripciones/listado-inscripciones.component';
+import { ColorMateriasDirective } from './directive/color-materias.directive';
 
 
 registerLocaleData(localeEsAr, 'es-Ar');
@@ -48,6 +49,7 @@ registerLocaleData(localeEsAr, 'es-Ar');
     InscMateriaAComponent,
     VerMisInscripcionesComponent,
     ListadoInscripcionesComponent,
+    ColorMateriasDirective,
    
   ],
   imports: [

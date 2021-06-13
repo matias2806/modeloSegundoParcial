@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(private AuthSvc: AuthService, private router: Router, private _Uservice: UsuariosService, private _Mservice: MensajesService) {
     this.carga5usuarios();
     // console.log(this.usuariosAccesoRapido);
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -33,12 +33,12 @@ export class LoginComponent implements OnInit {
     //console.log('form ->',this.loginForm.value);
     try {
       const user = await this.AuthSvc.login(email, password);
-      if(user){
+      if (user) {
         //Redirect to home page
         this.router.navigate(['/home']);
       }
-      else{
-        
+      else {
+
         this._Mservice.mensajeError("El email y la contraseña no corresponden");
       }
     } catch (error) {
@@ -64,7 +64,10 @@ export class LoginComponent implements OnInit {
       case "Lorena":
         this.loginForm.setValue({ email: 'lorena.bevilacqua75@gmail.com', password: '123456' });
         break;
-        case "admin":
+      case "Cristian":
+        this.loginForm.setValue({ email: 'cristianfabiocelano@gmail.com', password: '123456' });
+        break;
+      case "admin":
         this.loginForm.setValue({ email: 'admin@gmail.com', password: '123456' });
         break;
       default:
@@ -98,10 +101,17 @@ export class LoginComponent implements OnInit {
       }
     });
 
+    this._Uservice.getUsuarioPorEmail("cristianfabiocelano@gmail.com").then(user => {
+      if (user) {
+        this.usuariosAccesoRapido?.push(user);
+      }
+    });
+    
     this._Uservice.getUsuarioPorEmail("admin@gmail.com").then(user => {
       if (user) {
         this.usuariosAccesoRapido?.push(user);
       }
     });
+
   }
 }
