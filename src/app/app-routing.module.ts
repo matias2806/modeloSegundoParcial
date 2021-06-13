@@ -7,6 +7,7 @@ import { InscMateriaAComponent } from './components/Alumnos/insc-materia-a/insc-
 import { VerMisInscripcionesComponent } from './components/Alumnos/ver-mis-inscripciones/ver-mis-inscripciones.component';
 import { VerMatYalumnosComponent } from './components/inscriptos/verMateriasyAlum/ver-mat-yalumnos/ver-mat-yalumnos.component';
 import { AltaMateriaComponent } from './components/materia/alta-materia/alta-materia.component';
+import { ListadoAlumnosPorMateriasComponent } from './components/Profesores/listado-alumnos-por-materias/listado-alumnos-por-materias.component';
 import { ListadoMateriasACargoComponent } from './components/Profesores/listado-materias-acargo/listado-materias-acargo.component';
 import { ListadoUsuariosComponent } from './components/usuarios/listadoUsuarios/listado-usuarios/listado-usuarios.component';
 import { GAuthGuard } from './guards/g-auth.guard';
@@ -29,6 +30,7 @@ const routes: Routes = [
 
   //profesor
   { path: 'materiasACargo', component:  ListadoMateriasACargoComponent },
+  { path: 'alumnosPorMateria', component:  ListadoAlumnosPorMateriasComponent },
 ];
 
 @NgModule({
