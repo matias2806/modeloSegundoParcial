@@ -6,9 +6,11 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
+            <!-- Todos -->
             <li class="nav-item active">
                 <a class="nav-link" [routerLink]="['/home']">Home</a>
             </li>
+            <!-- Admin -->
             <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Admin'">
                 <a class="nav-link" [routerLink]="['/altaAdmin']">Alta Admin</a>
             </li>
@@ -24,6 +26,14 @@
             <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Admin'">
                 <a class="nav-link" [routerLink]="['/listadoUsuarios']">Ver Usuarios</a>
             </li>
+            <!-- Alumnos -->
+            <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Alumno'">
+                <a class="nav-link" [routerLink]="['/inscribirmeMateria']">Inscripción Materia</a>
+            </li>
+            <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Alumno'">
+                <a class="nav-link" [routerLink]="['/verMisInscripciones']">ver Inscripciónes</a>
+            </li>
+            
             
         </ul>
         <ul class="navbar-nav mx-auto" *ngIf="user$ |async as user; else login">

@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-11 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-12 col-lg-12 text-center">
+                    <h2>Ver el listado a las materias que estoy inscripto</h2>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12 col-lg-12 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-listado-materias [listadoMaterias]='listadoMat'
+                                    (eventoMateriaSeleccionada)="cargarMateriaSeleccionada($event)">
+                                </app-listado-materias>
+
+                                <app-listado-inscripciones [listadoInscripciones]='listadoIns'
+                                    (eventoInscripcionSeleccionada)="cargarInscripcionSeleccionada($event)">
+                                </app-listado-inscripciones>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

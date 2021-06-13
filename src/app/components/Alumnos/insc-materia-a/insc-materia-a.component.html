@@ -6,11 +6,7 @@
                     <h2>Inscripción de materias</h2>
                 </div>
                 <div class="row mt-4">
-                    <div class="col-md-6 col-lg-6 text-center">
-                        <h4>Alumno elejido</h4>
-                        <input type="text" id="alumno" class="form-control" value="{{nombreAlum}}" disabled>
-                    </div>
-                    <div class="col-md-6 col-lg-6 text-center">
+                    <div class="col-md-12 col-lg-12 text-center">
                         <h4>Materia elejida</h4>
                         <input type="text" id="alumno" class="form-control" value="{{nombreMat}}" disabled>
                     </div>
@@ -18,20 +14,11 @@
 
                 <div class="row mt-4">
                     <div class="col-md-12 col-lg-12 text-center d-grid gap-2">
-                        <button class="btn btn-primary" (click)="inscribir()">Inscribir al alumno en la materia</button>
+                        <button class="btn btn-primary" (click)="inscribir()">Inscribirme a la materia</button>
                     </div>
                 </div>
                 <div class="row mt-4">
-                    <div class="col-md-6 col-lg-6 order-md-last mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <app-listado-alumnos [listadoAlumnos]='listadoAlumn'
-                                    (eventoAlumnoSeleccionado)="cargarAlumnoSeleccionado($event)"></app-listado-alumnos>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-6 order-md-last mt-5">
+                    <div class="col-md-12 col-lg-12 order-md-last mt-5">
                         <div class="card">
                             <div class="card-body">
                                 <app-listado-materias [listadoMaterias]='listadoMat'

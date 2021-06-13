@@ -25,6 +25,9 @@ import { InscMateriaComponent } from './components/admin/inscMateria/insc-materi
 import { VerMatYalumnosComponent } from './components/inscriptos/verMateriasyAlum/ver-mat-yalumnos/ver-mat-yalumnos.component';
 import { ListadoUsuariosComponent } from './components/usuarios/listadoUsuarios/listado-usuarios/listado-usuarios.component';
 import { FiltroUsuariosPipe } from './pipes/filtro-usuarios.pipe';
+import { InscMateriaAComponent } from './components/Alumnos/insc-materia-a/insc-materia-a.component';
+import { VerMisInscripcionesComponent } from './components/Alumnos/ver-mis-inscripciones/ver-mis-inscripciones.component';
+import { ListadoInscripcionesComponent } from './components/inscriptos/listado-inscripciones/listado-inscripciones.component';
 
 
 registerLocaleData(localeEsAr, 'es-Ar');
@@ -42,6 +45,9 @@ registerLocaleData(localeEsAr, 'es-Ar');
     VerMatYalumnosComponent,
     ListadoUsuariosComponent,
     FiltroUsuariosPipe,
+    InscMateriaAComponent,
+    VerMisInscripcionesComponent,
+    ListadoInscripcionesComponent,
    
   ],
   imports: [
