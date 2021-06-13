@@ -29,6 +29,7 @@ import { InscMateriaAComponent } from './components/Alumnos/insc-materia-a/insc-
 import { VerMisInscripcionesComponent } from './components/Alumnos/ver-mis-inscripciones/ver-mis-inscripciones.component';
 import { ListadoInscripcionesComponent } from './components/inscriptos/listado-inscripciones/listado-inscripciones.component';
 import { ColorMateriasDirective } from './directive/color-materias.directive';
+import { ListadoMateriasACargoComponent } from './components/Profesores/listado-materias-acargo/listado-materias-acargo.component';
 
 
 registerLocaleData(localeEsAr, 'es-Ar');
@@ -50,6 +51,7 @@ registerLocaleData(localeEsAr, 'es-Ar');
     VerMisInscripcionesComponent,
     ListadoInscripcionesComponent,
     ColorMateriasDirective,
+    ListadoMateriasACargoComponent,
    
   ],
   imports: [

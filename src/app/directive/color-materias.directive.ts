@@ -13,7 +13,7 @@ export class ColorMateriasDirective implements OnInit {
   ngOnInit() {
     // const aux = this.el.nativeElement;
 
-    console.log(this.resaltarColor);
+    // console.log(this.resaltarColor);
 
     this.resaltar(this.resaltarColor);
   }

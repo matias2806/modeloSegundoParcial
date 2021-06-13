@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="\">&nbsp;&nbsp; UTN</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
@@ -33,8 +34,13 @@
             <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Alumno'">
                 <a class="nav-link" [routerLink]="['/verMisInscripciones']">ver Inscripciónes</a>
             </li>
+            <!-- Profesor -->
+            <li class="nav-item active" *ngIf="this.usuario?.tipoPerfil =='Profesor'">
+                <a class="nav-link" [routerLink]="['/materiasACargo']">Materias a cargo</a>
+            </li>
             
-            
+
+
         </ul>
         <ul class="navbar-nav mx-auto" *ngIf="user$ |async as user; else login">
             <li class="nav-item " *ngIf="user">
@@ -44,7 +50,7 @@
             <li class="nav-item">
                 <a class="nav-link active">{{user?.email}}</a>
             </li>
-            
+
         </ul>
         <ng-template #login>
             <ul class="navbar-nav mx-auto">
