@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="col-md-12 col-lg-12 text-center">
-                    <h2>Inscripción de materias</h2>
+                    <h2>Ver materias y alumnos inscriptos</h2>
                     <h6>Por favor seleccione una materia para ver a los alumnos inscriptos.</h6>
                 </div>
                 <div class="row mt-4">
@@ -17,11 +17,23 @@
                         </div>
                     </div>
 
-                    <div class="col-md-8 col-lg-8 order-md-last mt-5">
+                    <div class="col-md-4 col-lg-4 order-md-last mt-5">
                         <div class="card">
                             <div class="card-body">
                                 <app-listado-alumnos [listadoAlumnos]='listadoAlumn'
-                                (eventoAlumnoSeleccionado)="cargarAlumnoSeleccionado($event)"></app-listado-alumnos>
+                                    (eventoAlumnoSeleccionado)="cargarAlumnoSeleccionado($event)"></app-listado-alumnos>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div *ngIf="materiaElejido != null">
+                                    <h6 class="text-center">Foto de la materia</h6>
+                                    <img src="{{materiaElejido.URLfoto}}" *ngIf="materiaElejido.URLfoto != undefined " class="tamanio mt-2" alt="FOTO DE MATERIA">
+                                    <h6 *ngIf="materiaElejido.URLfoto == undefined" class="text-center  mt-4">Lo sentimos ocurrio un error</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -32,4 +44,3 @@
         </div>
     </div>
 </div>
-
