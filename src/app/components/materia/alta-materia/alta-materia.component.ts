@@ -25,6 +25,8 @@ export class AltaMateriaComponent implements OnInit {
   public banderaProfesorElejido = true;
   public profesor: Usuario | null = null;
 
+  private foto: any | null = null;
+
   constructor(private fb: FormBuilder, private AuthSvc: AuthService, private router: Router, private _Uservice: UsuariosService, private _Mservice: MensajesService, private _MateService: MateriaService, private _Iservice: InscripcionMService) { }
 
   ngOnInit(): void {
@@ -37,7 +39,8 @@ export class AltaMateriaComponent implements OnInit {
       'cuatrimestre': ['', [Validators.required]],//Obli
       'cupoAlumnos': ['', [Validators.required, Validators.min(1), Validators.max(200)]],//Obli
       'anio': ['', [Validators.required, Validators.min(1000), Validators.max(9999)]],//Obli
-      'profesor': ['', [Validators.required]]
+      'profesor': ['', [Validators.required]],
+      'foto': ['', [Validators.required]],
     });
   }
 
@@ -54,7 +57,12 @@ export class AltaMateriaComponent implements OnInit {
     this.registerForm?.controls['profesor'].setValue("");
   }
 
+  nuevaImagen(event: any): void {
+    this.foto = event.target.files[0];
+  }
+
   async onRegister() {
+    var urlFoto="";
     console.log(this.registerForm);
     let materia: Materia = {
       id: uuidv4(),
@@ -63,9 +71,12 @@ export class AltaMateriaComponent implements OnInit {
       cupoAlumnos: this.registerForm?.controls['cupoAlumnos'].value,
       anio: this.registerForm?.controls['anio'].value,
       profesor: this.registerForm?.controls['profesor'].value,
+      foto: this.registerForm?.controls['foto'].value,
+      URLfoto: urlFoto
     }
     console.log(materia);
-    this._MateService.alta(materia);
+    // this._MateService.alta(materia);
+    this._MateService.preAlta(materia, this.foto)
 
     let inscripcion: InscripcionMateria = {
       id: uuidv4(),

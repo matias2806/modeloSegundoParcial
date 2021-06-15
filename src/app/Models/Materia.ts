@@ -7,4 +7,6 @@ export class Materia {
     public cupoAlumnos:string="";
     public anio:string="";
     public profesor:Usuario;    
+    public URLfoto: any; 
+    public foto: any; 
 }

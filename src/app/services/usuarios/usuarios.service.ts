@@ -14,9 +14,9 @@ export class UsuariosService {
 
 
   public usuarioAuxiliarSoloAlta : Usuario;
+  private filePath: any;
 
   public usuario: any = {};
-  private filePath: any;
   // private dowloadURL: Observable<string>;
 
   private path = '/usuarios';

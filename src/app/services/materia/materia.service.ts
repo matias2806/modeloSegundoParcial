@@ -12,6 +12,9 @@ import { Materia } from 'src/app/Models/Materia';
 })
 export class MateriaService {
 
+  public materiaAuxiliarSoloAlta : Materia;
+  private filePath: any;
+
   private path = '/materias';
   
   materiasColecction: AngularFirestoreCollection<Materia>;
@@ -34,6 +37,30 @@ export class MateriaService {
   alta(materia: Materia) {
     console.log("Alta exitosa");
     return this.materiasColecction.add(JSON.parse(JSON.stringify(materia)));
+  }
+
+  preAlta(materia: Materia, image: any){
+    if (image) {
+      this.materiaAuxiliarSoloAlta = materia;
+      this.subirImagenConUid(materia, image);
+
+      console.log(" this.materiaAuxiliarSoloAlta", this.materiaAuxiliarSoloAlta);
+      setTimeout(() => {
+        this.alta( this.materiaAuxiliarSoloAlta);
+      }, 2000);
+    }
+  }
+
+  subirImagenConUid(materia: Materia, imagen: any) {
+    this.filePath = `images/materia/${materia.id}/${imagen.name}`;
+    const fileRef = this.storage.ref(this.filePath);
+    const task = this.storage.upload(this.filePath, imagen);
+    task.snapshotChanges().pipe(finalize(() => {
+      fileRef.getDownloadURL().subscribe(urlImagen => {
+        console.log("Pruebaaa => " + urlImagen)
+        this.materiaAuxiliarSoloAlta.URLfoto = urlImagen
+      })
+    })).subscribe();
   }
 
   traerTodos() {
