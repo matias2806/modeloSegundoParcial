@@ -8,7 +8,7 @@ export class EmailDirective {
   constructor(private el: ElementRef) { }
 
    ngOnInit() {
-    console.log(this.email);
+    // console.log(this.email);
     this.el.nativeElement.style
     // this.el.nativeElement.style.background = '#5F9EA0';
     // return this.email;

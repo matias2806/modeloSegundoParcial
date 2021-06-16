@@ -74,4 +74,19 @@ export class InscripcionMService {
         this._Mservice.mensajeExitoso(mensajeFallo);
       });
   }
+
+
+  updateRapido(id: any, ins: InscripcionMateria) {
+    var user = this.db.collection(this.path).doc(id);
+
+    return user.update({
+      listaAlumnos: ins.listaAlumnos
+    })
+      .then(() => {
+        console.log("Documento actualizado!");
+      })
+      .catch((error) => {
+        console.error("Error en la actualizacion: ", error);
+      });
+  }
 }

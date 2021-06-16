@@ -141,4 +141,18 @@ export class UsuariosService {
       });
   }
 
+  updateRapido(id: any, usuario: Usuario) {
+    var user = this.db.collection(this.path).doc(id);
+
+    return user.update({
+      fechaBaja: usuario.fechaBaja
+    })
+      .then(() => {
+        console.log("Documento actualizado!");
+      })
+      .catch((error) => {
+        console.error("Error en la actualizacion: ", error);
+      });
+  }
+
 }
