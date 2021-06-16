@@ -21,6 +21,12 @@ export class NavbarComponent {
       var dataUser = await this._Uservice.getUsuarioPorEmail(user.email);
       this.usuario = dataUser;
     }
+    // console.log(this.usuario);
+    this.aux();
+  }
+
+  aux(){
+    // console.log("-----A-----");
   }
   async onLogout() {
 

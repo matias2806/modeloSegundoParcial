@@ -30,22 +30,22 @@ export class LoginComponent implements OnInit {
 
   async onLogin() {
     const { email, password } = this.loginForm.value;
-    //console.log('form ->',this.loginForm.value);
     try {
-      const user = await this.AuthSvc.login(email, password);
-      if (user) {
-        //Redirect to home page
-        this.router.navigate(['/home']);
-      }
-      else {
+      const user = await this.AuthSvc.login(email, password).then(r => {
+        console.log(r.operationType);
+        if (r.operationType == "signIn") {
+          this.router.navigate(['/home']);
+        }
+        else {
+          this._Mservice.mensajeError("El email y la contraseña no corresponden");
+        }
+      });
 
-        this._Mservice.mensajeError("El email y la contraseña no corresponden");
-      }
     } catch (error) {
-      console.log("aa", error);
-      //this._Mservice.mensajeError(error);
+      // console.log("aa", error);
     }
   }
+
   cargarMatias() {
     this.loginForm.setValue({ email: 'matias.palmieri.01@gmail.com', password: '123456' });
   }
@@ -106,7 +106,7 @@ export class LoginComponent implements OnInit {
         this.usuariosAccesoRapido?.push(user);
       }
     });
-    
+
     this._Uservice.getUsuarioPorEmail("admin@gmail.com").then(user => {
       if (user) {
         this.usuariosAccesoRapido?.push(user);
