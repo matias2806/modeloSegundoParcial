@@ -25,8 +25,11 @@ export class ListadoUsuariosComponent implements OnInit {
 
   async eliminarUsuario(usuario: Usuario) {
     console.log(usuario);
-    usuario.estado = "BAJA"
-
+    var hoy = new Date()
+    usuario.estado = "BAJA";
+    usuario.fechaBaja = hoy;
+    
+    console.log(usuario);
     var idUser = await this._Uservice.obtenerKeyUsuario(usuario);
     if (idUser != null) {
       this._Uservice.updateUsuarioEstado(idUser, usuario, "Usuario dado de baja", "La baja del usuario no pudo ser realizada");
@@ -34,5 +37,7 @@ export class ListadoUsuariosComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-
+  alumnosEliminados(){
+    this.router.navigate(['/alumnosEliminados']);
+  }
 }

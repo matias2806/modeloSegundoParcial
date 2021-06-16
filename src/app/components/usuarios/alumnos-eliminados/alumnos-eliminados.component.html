@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-11 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <h2 class="text-center">Listado de Alumnos eliminados</h2>       
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="pos">Imagen</th>
+                                    <th class="pos">Nombre</th>
+                                    <th class="pos">Email</th>
+                                    <th class="pos">Fecha de Baja</th>
+                                    <th class="pos">Tipo Perfil</th>
+                                    <th class="pos">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngIf="listadoUsers != null">
+                                <tr *ngFor="let user of listadoUsers ">
+                                    <td class="pos" *ngIf="user.estado == 'BAJA'"><img src="{{user.URLfoto}}" class="tamanioFoto" alt=""></td>
+                                    <td class="pos" *ngIf="user.estado == 'BAJA'">{{user.nombre}}</td>
+                                    <td class="pos" *ngIf="user.estado == 'BAJA'">{{user.email}}</td>
+                                    <td class="pos" *ngIf="user.estado == 'BAJA'">{{user.fechaBaja.toDate() | date: 'short'}}</td>
+                                    <td class="pos" *ngIf="user.estado == 'BAJA'">{{user.tipoPerfil}}</td>
+                                    <td class="pos" *ngIf="user.estado == 'BAJA'">{{user.estado}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

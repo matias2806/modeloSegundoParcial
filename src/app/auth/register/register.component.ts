@@ -49,7 +49,8 @@ export class RegisterComponent implements OnInit {
           contraseña: this.registerForm?.controls['contraseña'].value,
           uid: r?.user?.uid,
           URLfoto: urlFoto,
-          estado: "ACTIVO"
+          estado: "ACTIVO",
+          fechaBaja: null,
         };
 
         this._Uservice.preGuardarUsuario(user, this.foto);

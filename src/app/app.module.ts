@@ -31,6 +31,7 @@ import { ListadoInscripcionesComponent } from './components/inscriptos/listado-i
 import { ColorMateriasDirective } from './directive/color-materias.directive';
 import { ListadoMateriasACargoComponent } from './components/Profesores/listado-materias-acargo/listado-materias-acargo.component';
 import { ListadoAlumnosPorMateriasComponent } from './components/Profesores/listado-alumnos-por-materias/listado-alumnos-por-materias.component';
+import { AlumnosEliminadosComponent } from './components/usuarios/alumnos-eliminados/alumnos-eliminados.component';
 
 
 registerLocaleData(localeEsAr, 'es-Ar');
@@ -54,6 +55,7 @@ registerLocaleData(localeEsAr, 'es-Ar');
     ColorMateriasDirective,
     ListadoMateriasACargoComponent,
     ListadoAlumnosPorMateriasComponent,
+    AlumnosEliminadosComponent,
    
   ],
   imports: [

@@ -128,7 +128,8 @@ export class UsuariosService {
     var user = this.db.collection(this.path).doc(id);
 
     return user.update({
-      estado: usuario.estado
+      estado: usuario.estado,
+      fechaBaja: usuario.fechaBaja
     })
       .then(() => {
         console.log("Documento actualizado!");

@@ -8,4 +8,5 @@ export class Usuario {
     public uid?: string;//Obli
     public URLfoto: any; //Obli
     public estado: string; //ACTIVO  -- BAJA
+    public fechaBaja: Date | null; //ACTIVO  -- BAJA
 }
