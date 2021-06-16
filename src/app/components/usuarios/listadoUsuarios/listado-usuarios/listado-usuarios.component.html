@@ -22,14 +22,26 @@
                                     <th>Nombre</th>
                                     <th>Email</th>
                                     <th>Tipo Perfil</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr *ngFor="let user of listadoUsers | filtroUsuarios:filterPost">
-                                    <!-- <td>{{i + 1 }}</td> -->
-                                    <td>{{user.nombre}}</td>
-                                    <td>{{user.email}}</td>
-                                    <td>{{user.tipoPerfil}}</td>
+                            <tbody *ngIf="listadoUsers != null">
+                                <tr *ngFor="let user of listadoUsers | filtroUsuarios:filterPost" >
+                                    <td *ngIf="user.estado != 'BAJA'">{{user.nombre}}</td>
+                                    <td *ngIf="user.estado != 'BAJA'">{{user.email}}</td>
+                                    <td *ngIf="user.estado != 'BAJA'">{{user.tipoPerfil}}</td>
+                                    <td *ngIf="user.estado != 'BAJA'">{{user.estado}}</td>
+                                    <div  *ngIf="user.tipoPerfil == 'Alumno' && user.estado != 'BAJA'">
+                                        <td>
+                                            <button class="btn btn-danger" (click)="eliminarUsuario(user)">Eliminar
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </div>
+                                    <div *ngIf="user.tipoPerfil != 'Alumno' && user.estado != 'BAJA'">
+                                        <td></td>
+                                    </div>
                                 </tr>
                             </tbody>
                         </table>

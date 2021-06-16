@@ -7,4 +7,5 @@ export class Usuario {
     public tipoPerfil: string | null = ''; //Obli
     public uid?: string;//Obli
     public URLfoto: any; //Obli
+    public estado: string; //ACTIVO  -- BAJA
 }

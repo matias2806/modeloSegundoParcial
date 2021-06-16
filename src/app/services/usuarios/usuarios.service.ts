@@ -123,4 +123,21 @@ export class UsuariosService {
     })).subscribe();
   }
 
+
+  updateUsuarioEstado(id: any, usuario: Usuario, mensajeExitoso: string, mensajeFallo: string) {
+    var user = this.db.collection(this.path).doc(id);
+
+    return user.update({
+      estado: usuario.estado
+    })
+      .then(() => {
+        console.log("Documento actualizado!");
+        this._Mservice.mensajeExitoso(mensajeExitoso);
+      })
+      .catch((error) => {
+        console.error("Error en la actualizacion: ", error);
+        this._Mservice.mensajeExitoso(mensajeFallo);
+      });
+  }
+
 }

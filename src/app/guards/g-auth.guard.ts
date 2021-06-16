@@ -27,7 +27,7 @@ export class GAuthGuard implements CanActivate {
     if (user?.email != null && user) {
       // console.log(user.email);
       var dataUser: any = await this._Uservice.getUsuarioPorEmail(user.email);
-      console.log(dataUser);
+      // console.log(dataUser);
       if(dataUser.tipoPerfil == "Admin"){
         // console.log("Pasee");
         return true;

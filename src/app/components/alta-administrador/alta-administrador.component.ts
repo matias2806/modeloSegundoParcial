@@ -47,7 +47,8 @@ export class AltaAdministradorComponent implements OnInit {
           email: this.registerForm?.controls['email'].value,
           contraseña: this.registerForm?.controls['contraseña'].value,
           uid: r?.user?.uid,
-          URLfoto: urlFoto
+          URLfoto: urlFoto,
+          estado: "ACTIVO"
         };
 
         this._Uservice.preGuardarUsuario(user, this.foto);
