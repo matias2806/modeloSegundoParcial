@@ -27,8 +27,9 @@ export class InscMateriaComponent implements OnInit {
   constructor(private _Uservice: UsuariosService, private _Mservice: MensajesService, private _MateService: MateriaService, private _Iservice: InscripcionMService) { }
 
   ngOnInit(): void {
-    this._Uservice.obtenerAlumnos().subscribe(data => {
+    this._Uservice.obtenerAlumnosAlta().subscribe(data => {
       this.listadoAlumn = data;
+      // this.filtrarBaja();
     });
 
     this._MateService.traerTodos().subscribe((materia: Materia[]) => {

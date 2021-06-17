@@ -80,6 +80,13 @@ export class UsuariosService {
     }));
   }
 
+  obtenerAlumnosAlta() {
+    return this.usuarios.pipe(map(dato => {
+      return dato.filter(f => {
+        return (f.tipoPerfil == "Alumno" && f.estado == "ACTIVO");
+      });
+    }));
+  }
 
 
   async obtenerKeyUsuario(user: Usuario) {

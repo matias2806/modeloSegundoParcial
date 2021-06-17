@@ -13,21 +13,20 @@ export class NavbarComponent {
   public user$: Observable<any> = this.authSvc.afAuth.user;
   public usuario: any = null;
 
-  constructor(public authSvc: AuthService, private _Uservice: UsuariosService, private router: Router) { }
+  us2: any;
+  cambio: boolean = true;
+  constructor(public authSvc: AuthService, private _Uservice: UsuariosService, private router: Router) {
+  }
 
   async ngOnInit() {
-    var user = await this.authSvc.getCurrentUser();
-    if (user?.email != null && user) {
-      var dataUser = await this._Uservice.getUsuarioPorEmail(user.email);
-      this.usuario = dataUser;
-    }
-    // console.log(this.usuario);
-    this.aux();
+    this.user$.subscribe(async r => {
+      if (r && r.email != null ) {
+        var dataUser = await this._Uservice.getUsuarioPorEmail(r.email);
+        this.usuario = dataUser;
+      }
+    });
   }
 
-  aux(){
-    // console.log("-----A-----");
-  }
   async onLogout() {
 
     try {
