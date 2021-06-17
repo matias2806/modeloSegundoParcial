@@ -34,6 +34,10 @@ import { ListadoAlumnosPorMateriasComponent } from './components/Profesores/list
 import { AlumnosEliminadosComponent } from './components/usuarios/alumnos-eliminados/alumnos-eliminados.component';
 import { EmailDirective } from './directive/email.directive';
 import { CalificacionPipe } from './pipes/calificacion.pipe';
+import { CargarExamenComponent } from './examen/cargar-examen/cargar-examen.component';
+import { ListadoExamenesComponent } from './components/examen/listado-examenes/listado-examenes.component';
+import { VerListadoExamenesComponent } from './components/examen/ver-listado-examenes/ver-listado-examenes.component';
+import { ActasDeExamenComponent } from './components/Profesores/actas-de-examen/actas-de-examen.component';
 
 
 registerLocaleData(localeEsAr, 'es-Ar');
@@ -60,6 +64,10 @@ registerLocaleData(localeEsAr, 'es-Ar');
     AlumnosEliminadosComponent,
     EmailDirective,
     CalificacionPipe,
+    CargarExamenComponent,
+    ListadoExamenesComponent,
+    VerListadoExamenesComponent,
+    ActasDeExamenComponent,
    
   ],
   imports: [

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-11 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-12 col-lg-12 text-center">
+                    <h2>Actas De Examen</h2>
+                </div>
+                <div class="col-md-12 col-lg-12 text-center mt-4">
+                    <h6>Aca puede observar las actas de los examenes</h6>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4 col-lg-4 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-listado-materias [listadoMaterias]='listadoMat'
+                                    (eventoMateriaSeleccionada)="cargarMateriaSeleccionada($event)">
+                                </app-listado-materias>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-title">
+                                <h5 class="text-center mt-4">Alumnos para promoción</h5>
+                            </div>
+                            <div class="card-body">
+                                <app-listado-examenes [listadoExamenes]='listadoExamenesPromocion'
+                                    (eventoExamenSeleccionado)="cargarExamenSeleccionado($event)">
+                                </app-listado-examenes>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-lg-4 order-md-last mt-5">
+                        <div class="card">
+                            <div class="card-title">
+                                <h5 class="text-center mt-4">Alumnos para recuperatorio</h5>
+                            </div>
+                            <div class="card-body">
+                                <app-listado-examenes [listadoExamenes]='listadoExamenesNoPromocion'
+                                    (eventoExamenSeleccionado)="cargarExamenSeleccionado2($event)">
+                                </app-listado-examenes>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

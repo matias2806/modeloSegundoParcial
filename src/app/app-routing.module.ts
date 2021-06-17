@@ -5,12 +5,15 @@ import { OpcionesDeUsuariosComponent } from './auth/opciones-de-usuarios/opcione
 import { InscMateriaComponent } from './components/admin/inscMateria/insc-materia/insc-materia.component';
 import { InscMateriaAComponent } from './components/Alumnos/insc-materia-a/insc-materia-a.component';
 import { VerMisInscripcionesComponent } from './components/Alumnos/ver-mis-inscripciones/ver-mis-inscripciones.component';
+import { VerListadoExamenesComponent } from './components/examen/ver-listado-examenes/ver-listado-examenes.component';
 import { VerMatYalumnosComponent } from './components/inscriptos/verMateriasyAlum/ver-mat-yalumnos/ver-mat-yalumnos.component';
 import { AltaMateriaComponent } from './components/materia/alta-materia/alta-materia.component';
+import { ActasDeExamenComponent } from './components/Profesores/actas-de-examen/actas-de-examen.component';
 import { ListadoAlumnosPorMateriasComponent } from './components/Profesores/listado-alumnos-por-materias/listado-alumnos-por-materias.component';
 import { ListadoMateriasACargoComponent } from './components/Profesores/listado-materias-acargo/listado-materias-acargo.component';
 import { AlumnosEliminadosComponent } from './components/usuarios/alumnos-eliminados/alumnos-eliminados.component';
 import { ListadoUsuariosComponent } from './components/usuarios/listadoUsuarios/listado-usuarios/listado-usuarios.component';
+import { CargarExamenComponent } from './examen/cargar-examen/cargar-examen.component';
 import { GAuthGuard } from './guards/g-auth.guard';
 
 const routes: Routes = [
@@ -33,7 +36,11 @@ const routes: Routes = [
   //profesor
   { path: 'materiasACargo', component:  ListadoMateriasACargoComponent },
   { path: 'alumnosPorMateria', component:  ListadoAlumnosPorMateriasComponent },
+  { path: 'actasDeExamen', component:  ActasDeExamenComponent },
 
+  //Examen
+  { path: 'cargarExamen', component:  CargarExamenComponent },
+  { path: 'verExamenes', component:  VerListadoExamenesComponent },
 
 ];
 

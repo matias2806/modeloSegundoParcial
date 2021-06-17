@@ -9,9 +9,12 @@
                     <div class="col-md-12 col-lg-12 order-md-last mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <app-listado-materias [listadoMaterias]='listadoMat'
+                                <!-- <app-listado-materias [listadoMaterias]='listadoMat'
                                     (eventoMateriaSeleccionada)="cargarMateriaSeleccionada($event)">
-                                </app-listado-materias>
+                                </app-listado-materias> -->
+                                <app-listado-examenes [listadoExamenes]='listadoExam'
+                                    (eventoExamenSeleccionado)="cargarExamenSeleccionado($event)">
+                                </app-listado-examenes>
 
                             </div>
                         </div>
@@ -22,4 +25,3 @@
         </div>
     </div>
 </div>
-
