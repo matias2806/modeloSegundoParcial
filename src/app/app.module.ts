@@ -33,6 +33,7 @@ import { ListadoMateriasACargoComponent } from './components/Profesores/listado-
 import { ListadoAlumnosPorMateriasComponent } from './components/Profesores/listado-alumnos-por-materias/listado-alumnos-por-materias.component';
 import { AlumnosEliminadosComponent } from './components/usuarios/alumnos-eliminados/alumnos-eliminados.component';
 import { EmailDirective } from './directive/email.directive';
+import { CalificacionPipe } from './pipes/calificacion.pipe';
 
 
 registerLocaleData(localeEsAr, 'es-Ar');
@@ -58,6 +59,7 @@ registerLocaleData(localeEsAr, 'es-Ar');
     ListadoAlumnosPorMateriasComponent,
     AlumnosEliminadosComponent,
     EmailDirective,
+    CalificacionPipe,
    
   ],
   imports: [

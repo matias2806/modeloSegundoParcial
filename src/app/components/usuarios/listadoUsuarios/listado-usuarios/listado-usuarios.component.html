@@ -29,11 +29,12 @@
                                 </tr>
                             </thead>
                             <tbody *ngIf="listadoUsers != null">
-                                <tr *ngFor="let user of listadoUsers | filtroUsuarios:filterPost">
+                                <tr *ngFor="let user of listadoUsers | filtroUsuarios:filterPost let i=index " >
                                     <td *ngIf="user.estado != 'BAJA'">{{user.nombre}}</td>
                                     <td *ngIf="user.estado != 'BAJA'">{{user.email}}</td>
                                     <td *ngIf="user.estado != 'BAJA'">{{user.tipoPerfil}}</td>
                                     <td *ngIf="user.estado != 'BAJA'">{{user.estado}}</td>
+                                    <!-- <td *ngIf="user.estado != 'BAJA'">{{i  | calificacion }}</td> -->
                                     <div *ngIf="user.tipoPerfil == 'Alumno' && user.estado != 'BAJA'">
                                         <td>
                                             <button class="btn btn-danger" (click)="eliminarUsuario(user)">Eliminar
